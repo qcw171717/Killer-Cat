@@ -80,8 +80,8 @@ def listen_process() -> Tuple[List[ProcessInfo], List[ProcessInfo]]:
     return wp, slp
 
 
-def get_apps(lst_ps_info: List[ProcessInfo]) -> Set[str]:
-    return set([i.app_name for i in lst_ps_info])
+def get_apps(lst_ps_info: List[ProcessInfo]) -> Set[ProcessInfo]:
+    return set([i for i in lst_ps_info])
 
 
 def _print_lst(l: list):
