@@ -88,16 +88,18 @@ def _print_lst(l: list):
     print('[\n\t' + '\n\t'.join([str(li) for li in l]) + '\n]')
 
 
-def running_process_during_interval(secs: float):
+def running_process_during_interval(secs: float, get_sleeps=False):
     s = time.time()
     ws = set()
     ss = set()
     while time.time() - s <= secs:
         wps, slps = listen_process()
-
         ws.update(get_apps(wps))
         ss.update(get_apps(slps))
-    return ws
+    if not get_sleeps:
+        return ws
+    else:
+        return {*ws, *ss}
 
 
 if __name__ == '__main__':
