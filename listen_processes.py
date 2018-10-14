@@ -62,6 +62,9 @@ class ProcessInfo:
     def is_root(self) -> bool:
         return self.owner in self.root_users
 
+    def __hash__(self):
+        return hash(''.join([self.app_name, self.pid]))
+
 
 #                             working app, sleeping app
 def listen_process() -> Tuple[List[ProcessInfo], List[ProcessInfo]]:

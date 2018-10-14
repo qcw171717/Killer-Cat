@@ -37,7 +37,7 @@ class Cat:
               ". " + self.name + ": " + self.sounds[random.randint(0, len(self.sounds) - 1)]
 
     def sound(self):
-        print(self.sounds[random.randint(0, len(self.sounds) - 1)])
+        print(self.name + ": " + self.sounds[random.randint(0, len(self.sounds) - 1)])
 
     def grow(self):
         if "Huge" in self.type:

@@ -1,5 +1,7 @@
 import time
 
+global_started = False
+
 class CatTimer:
 	""" A timer """
 
@@ -14,11 +16,13 @@ class CatTimer:
 
 	def start_timer(self):
 		print("Timer started!")
+		global_started = True
 		self.start_time = time.time()
 
 
 	def stop_timer(self) -> float:
 		print('Timer stopped')
+		global_started = False
 		self.timer_stopped = True
 		return time.time() - self.start_time
 
