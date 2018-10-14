@@ -23,9 +23,9 @@ class CatTimer:
 		return time.time() - self.start_time
 
 
-if __name__ == '__main__':
-	cat_timer = CatTimer()
-	cat_timer.start_timer()
-	time.sleep(3)
-	print(cat_timer.stop_timer(), 's')
+
+# cat_timer = CatTimer()
+# cat_timer.start_timer()
+# time.sleep(3)
+# print(cat_timer.stop_timer(), 's')
 
