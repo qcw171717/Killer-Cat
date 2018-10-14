@@ -27,7 +27,7 @@ class ProcessInfo:
 
     def __eq__(self, other):
         try:
-            return self.app_name == other.app_name
+            return self.app_name == other.app_name and self.pid == other.pid
         except AttributeError:
             return False
 
